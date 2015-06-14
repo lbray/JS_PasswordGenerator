@@ -1,0 +1,62 @@
+<html>
+<head>
+
+<script>
+
+function generatePass(plength){
+
+ var listalpha="abcdefghijklmnopqrstuvwxyz";
+ var listcaps="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ var listint="123456789";
+ var listspec="!@#_";
+ var temp='';
+ var len = plength/2;
+ var len = len - 1;
+ var lenspec = plength-len-len;
+
+ for (i=0;i<len;i++)
+     temp+=listalpha.charAt(Math.floor(Math.random()*listalpha.length));
+
+ for (i=0;i<len;i++)
+     temp+=listcaps.charAt(Math.floor(Math.random()*listcaps.length));
+
+ for (i=0;i<len;i++)
+     temp+=listint.charAt(Math.floor(Math.random()*listint.length));
+
+     temp=temp.split('').sort(function(){return 0.5-Math.random()}).join('');
+
+ document.write(temp);
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<br><br>
+
+<table>
+<tr>
+
+<td width="50%">
+	<script> generatePass(9); </script>  <br><br>
+	<script> setTimeout(generatePass(9),3000) </script>  <br><br>
+	<script> setTimeout(generatePass(9),3000) </script>  <br><br>
+	<script> setTimeout(generatePass(9),3000) </script>  <br><br>
+	<script> setTimeout(generatePass(9),3000) </script>  <br>
+</td>
+
+<td width="50%">
+	<form><textarea rows="10" cols="50"></textarea></form>
+</td>
+
+</tr>
+</table>
+
+<br><br>
+
+
+</body>
+</html>
